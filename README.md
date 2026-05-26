@@ -8,7 +8,7 @@ and stores the results in both S3 and RDS MySQL for further analysis.
 
 ## Architecture
 
-![Architecture](architecture.png)
+![architecture](assets/architecture.png)
 
 ---
 
@@ -60,6 +60,24 @@ aws-stock-pipeline/
 | RDS | xgmlwns-stock-db | MySQL data storage |
 | EventBridge | xgmlwns-pipeline-schedule | Daily 09:00 KST schedule |
 | IAM | ec2-s3-role | EC2 → S3 access role |
+
+---
+
+## Results
+
+### Lambda Execution Log
+> CloudWatch log stream list (automated daily at 09:00 KST)
+
+![stream_log](assets/stream_log.png)
+
+> Latest execution log detail (20 tickers saved to RDS & S3)
+
+![recent_log](assets/recent_log.png)
+
+### Stock Signals Table (RDS)
+> Latest stock_signals data with cumulative statistics
+
+![last_date_stockdb](assets/last_date_stockdb.png)
 
 ---
 
